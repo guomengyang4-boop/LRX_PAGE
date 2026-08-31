@@ -9,27 +9,30 @@ window.CONTENT = {
     "title": "给淡淡的你，留一页日常",
     "subtitle": "我把你分享过的一些日常，认真收进了这个小小的网页里。\n这一章，先只关于你。",
     "button": "打开这份日常档案",
-    "hint": "不用猜答案，只需要慢慢往下看"
+    "hint": "不用猜我藏了什么，只需要慢慢往下看"
   },
   "chapterOne": {
     "title": "在认识你以前，你已经走过很多风景",
     "intro": "你总说自己是淡淡的人，可我看到的，是一个认真生活、喜欢出发，也会把普通日子过得很丰富的人。这里想替你留住一些朋友圈里的日常。",
     "ending": [
       "这些，是我认识你以前，你已经拥有的生活。",
-      "一开始，我只是想做一个网页，把你分享过的这些日常认真保存下来。可做到这里时，我发现，从某一天开始，我也有幸出现在了故事旁边。"
+      "日常先记录到这里，以后还可以慢慢更新。"
     ],
-    "endingQuestion": "想看看，我们的故事是怎么开始的吗？",
+    "closingNote": "",
+    "endingQuestion": "接下来，是我的一点小私心——我放了我们相识之后的场景。",
+    "commentaryLabel": "我的旁白",
     "storyButton": "继续，看看后来"
   },
   "memories": [
     {
       "id": "memory-001",
-      "image": "",
+      "image": "./assets/photos/moment-2026-07-25.jpg",
       "secondaryImage": "",
-      "alt": "她以前朋友圈里的一次出发",
-      "date": "[朋友圈日期]",
-      "location": "她去过的地方",
-      "caption": "[把她这条朋友圈的原文或一句很轻的说明放在这里]",
+      "alt": "阳光照进窗边，她举着一本书的照片",
+      "title": "梅子熟时栀子香",
+      "date": "2026.07.25",
+      "location": "",
+      "caption": "这是我刚刚加你微信之后，你发的第一个朋友圈，也是你走进我枯燥生活的开始。",
       "layout": "large",
       "fit": "cover",
       "position": "center",
@@ -40,12 +43,13 @@ window.CONTENT = {
     },
     {
       "id": "memory-002",
-      "image": "",
+      "image": "./assets/photos/moment-2026-08-03.jpg",
       "secondaryImage": "",
-      "alt": "她朋友圈里普通又好看的一天",
-      "date": "[朋友圈日期]",
-      "location": "一顿饭 / 一阵晚风",
-      "caption": "[这里以后放她分享过的食物、城市或生活碎片]",
+      "alt": "电影院银幕上的电影画面",
+      "title": "某年某月某个星期几",
+      "date": "2026.08.03",
+      "location": "",
+      "caption": "这天你去看了电影。我记得你问我去不去，我其实很想去，却还是拒绝了。为什么呢？我当时在想，第一次见面总要有点准备吧，可我什么都没有准备好。面对你，我有一点自卑。",
       "layout": "right",
       "fit": "cover",
       "position": "center",
@@ -56,12 +60,13 @@ window.CONTENT = {
     },
     {
       "id": "memory-003",
-      "image": "",
+      "image": "./assets/photos/moment-travel-day-one.jpg",
       "secondaryImage": "",
-      "alt": "她朋友圈里喜欢的风景",
-      "date": "[朋友圈日期]",
-      "location": "下一站",
-      "caption": "[这里以后放她出去玩时记录的风景]",
+      "alt": "旅行时，她站在老建筑前拍下的背影",
+      "title": "烟火寻常",
+      "date": "旅行第一天",
+      "location": "",
+      "caption": "这是你去旅游后的第一个朋友圈。那天我很想找你聊天，可你告诉我“和朋友在一块不能光玩手机”。我忍了好久没有找你，直到晚上你到了酒店……那几个小时，甚是煎熬呀。",
       "layout": "polaroid",
       "fit": "cover",
       "position": "center",
@@ -73,18 +78,36 @@ window.CONTENT = {
     },
     {
       "id": "memory-004",
-      "image": "",
+      "image": "./assets/photos/moment-travel-hotpot.jpg",
       "secondaryImage": "",
-      "alt": "她朋友圈里的一个小瞬间",
-      "date": "[朋友圈日期]",
-      "location": "她的日常",
-      "caption": "[这里以后放一张你觉得很像她的照片]",
+      "alt": "旅行途中一桌丰盛的火锅",
+      "title": "地球旋转你吃饭",
+      "date": "旅行途中",
+      "location": "",
+      "caption": "想不到要写什么了，哈哈哈。反正猜测，吃的肯定很美味。",
       "layout": "left",
       "fit": "cover",
       "position": "center",
       "tones": [
         "#e5cfcd",
         "#a9909a"
+      ]
+    },
+    {
+      "id": "memory-005",
+      "image": "./assets/photos/moment-before-first-meet-sea.jpg",
+      "secondaryImage": "",
+      "alt": "旅行结束前，她坐在海边礁石上的照片",
+      "title": "海的颜色",
+      "date": "旅行结束之前",
+      "location": "",
+      "caption": "海的颜色？当然是学姐的美色啦～其实当时看到你这几组照片，我更紧张了：哇塞，这么漂亮的女孩子，后天我竟然要和她一起吃饭？三生有幸。",
+      "layout": "large",
+      "fit": "contain",
+      "position": "center",
+      "tones": [
+        "#8bbad1",
+        "#457b91"
       ]
     }
   ],
@@ -156,12 +179,11 @@ window.CONTENT = {
     },
     {
       "id": "story-003",
-      "type": "note",
+      "type": "text",
       "date": "后来",
       "location": "物流管理 → 我的专业方向",
-      "title": "聊天开始变得走心",
-      "caption": "知道你想跨考我现在的专业后，我去问朋友就业和考研的情况。我想给你的不是一句随口的鼓励，而是尽量负责、真正有用的建议。",
-      "note": "你的事情，我开始认真对待。"
+      "title": "聊天不只是聊天了",
+      "caption": "知道你想跨考我的方向后，我去问了朋友就业和考研的情况。那时候只是希望，能把自己知道的认真告诉你。"
     },
     {
       "id": "story-004",
@@ -177,16 +199,11 @@ window.CONTENT = {
     },
     {
       "id": "story-005",
-      "type": "checklist",
+      "type": "text",
       "date": "你回来以前",
       "location": "上海",
-      "title": "没有照片的两份见面礼",
-      "caption": "我不爱逛街，也很少一个人出去，却特意去泡泡玛特挑了一个盲盒，又买了我觉得很好用的笔。没有留下照片，但我记得当时挑选它们的认真。",
-      "items": [
-        "泡泡玛特盲盒 × 1",
-        "我觉得很好用的笔 × 2",
-        "第一次见面的期待 × 很多"
-      ]
+      "title": "盲盒和两支笔",
+      "caption": "你从福州回来前，我准备了一个盲盒和两支笔。一个觉得可爱，一个觉得实用。东西并不是很特别，只是在挑选的时候，就已经开始期待和你相见了。"
     },
     {
       "id": "story-006",
@@ -203,7 +220,7 @@ window.CONTENT = {
       "alt": "第一次一起吃饭和看电影的记录",
       "date": "2026.08.20",
       "location": "第三家餐厅 · 电影院",
-      "title": "好在，我们还是见到了",
+      "title": "第三家餐厅，和一场电影",
       "caption": "第三家餐厅终于开着，我们吃得很开心。后来一起看了《欢迎来龙餐馆》，回学校时已经很晚，可我只觉得这一天过得太快。",
       "fit": "contain",
       "position": "center"
@@ -226,7 +243,7 @@ window.CONTENT = {
       "image": "./assets/photos/daybyday-view.jpg",
       "secondaryImage": "./assets/photos/daybyday-food.jpg",
       "alt": "Day by Day 的窗景和漂亮饭",
-      "date": "上周六",
+      "date": "2026.08.29",
       "location": "Day by Day · 上海",
       "title": "我的第一顿“漂亮饭”",
       "caption": "这是我第一次走进这样的地方。窗外的城市、桌上的韩餐，还有坐在对面的你，让一个原本不熟悉的场所变成了我很愿意记住的一天。",
@@ -239,10 +256,10 @@ window.CONTENT = {
       "image": "./assets/photos/city-night.jpg",
       "secondaryImage": "./assets/photos/character-collage.jpg",
       "alt": "上周一起出去时拍下的夜景和卡通人物",
-      "date": "上周",
+      "date": "2026.08.29",
       "location": "上海 · 一起走过的地方",
-      "title": "不止一次见面以后",
-      "caption": "上周几乎每天一起下班、一起回学校，也有了这些出去玩的照片。我喜欢的不只是某一个特别安排，而是和你并肩走路、分享普通时间的感觉。",
+      "title": "那天还没有结束",
+      "caption": "吃完饭以后，那天还没有结束。一起走过街区、看夜色、遇到这些有趣的角色，原来一顿饭之后，也可以留下这么多画面。",
       "fit": "cover",
       "position": "center"
     },
@@ -263,13 +280,13 @@ window.CONTENT = {
     "prelude": "故事放到这里，\n有一个只属于我们的日期。",
     "title": "我们第一次见面，是哪一天？",
     "wrong": "好像不是这一天。再想想？",
-    "correct": "对，就是你问我“是你吗”的那一天。",
+    "correct": "那天以后，屏幕里的名字，终于有了真实的模样。",
     "transition": "接下来，是我想认真写给你的话。",
     "continueLabel": "打开这封信"
   },
   "chapterTwo": {
-    "title": "关于新鲜感，我想这样回答你",
-    "intro": "不是为了催你给我一个答案，只是想把那天没有说清楚的认真，慢慢写给你。"
+    "title": "关于我对你",
+    "intro": "有些话当面没能说完整，我想把它们安静地写在这里。"
   },
   "letterParagraphs": [
     {
@@ -286,7 +303,7 @@ window.CONTENT = {
     },
     {
       "id": "letter-004",
-      "text": "我是一个敏感、谨慎，也很保守的人。过去的经历让我有时会害怕失去，也可能因为在意而显得笨拙。但我不想把这些变成你的压力，更不想用这个网页换取一个必须马上给出的答案。"
+      "text": "我是一个敏感、谨慎，也很保守的人。过去的经历让我有时会害怕失去，也可能因为在意而显得笨拙。但我会学着把在意变得稳定、清楚，而不是让它成为你的负担。"
     },
     {
       "id": "letter-005",
@@ -294,23 +311,23 @@ window.CONTENT = {
     }
   ],
   "importantPhoto": {
-    "image": "./assets/photos/her-portrait.jpg",
-    "alt": "她和卡通人物一起拍下的照片",
-    "caption": "我喜欢的，不只是漂亮的照片，更是照片里那个自由、鲜活、很有自己节奏的你。",
+    "image": "",
+    "alt": "",
+    "caption": "",
     "fit": "cover",
     "position": "center 28%"
   },
   "confession": {
-    "before": "认识的时间还短，这是真的。\n我的认真也是真的。",
+    "before": "写到这里，\n只剩最后一句。",
     "button": "读到最后",
-    "final": "所以这一次，\n我不催你给出答案。\n\n如果你愿意，\n我们就慢一点。"
+    "final": "我喜欢的，\n不是突然出现的新鲜感。\n\n是和你聊天时的轻松，\n是并肩走在路上的踏实，\n也是想继续认真认识你的心情。"
   },
   "ending": {
     "image": "",
     "alt": "我们还没有拍下的下一张照片",
     "index": "NEXT FRAME",
     "photoLabel": "这张照片，我们还没有拍。",
-    "text": "继续聊天，继续一起下班，继续去吃没吃过的饭。\n我不要求你现在相信“永远”，只希望你愿意给我时间，让之后一次次具体的行动，替今天的我说话。",
+    "text": "如果以后还能继续聊天、一起下班、去吃没有吃过的饭，我会很开心。\n剩下的，就让之后的每一天自然发生。",
     "continued": "下一幕，想和你一起慢慢留下。"
   },
   "music": {

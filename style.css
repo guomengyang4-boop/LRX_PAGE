@@ -389,6 +389,8 @@ button:focus-visible, select:focus-visible, input:focus-visible, textarea:focus-
 }
 .moment-card__body { min-width: 0; }
 .moment-card__name { display: block; margin: 1px 0 9px; color: #657c98; font-size: 14px; letter-spacing: .04em; }
+.moment-card__title { margin: 0 0 8px; color: #343238; font: 500 18px/1.5 var(--serif); letter-spacing: .06em; }
+.moment-card__commentary-label { display: block; margin: 13px 0 5px; color: #ad706c; font-size: 8px; font-weight: 600; letter-spacing: .22em; }
 .moment-card__caption { margin: 0 0 12px; color: #343238; font-size: 14px; line-height: 1.75; white-space: pre-line; }
 .moment-card__media { width: min(100%, 430px); aspect-ratio: 4 / 3; border-radius: 3px; box-shadow: 0 13px 35px rgba(74, 58, 55, .11); }
 .moment-card__media img { filter: none; }
@@ -399,6 +401,7 @@ button:focus-visible, select:focus-visible, input:focus-visible, textarea:focus-
 .chapter-one-ending .ending-index { color: rgba(52,50,56,.3); }
 .chapter-one-ending p { max-width: 30em; }
 .chapter-one-ending .muted { color: rgba(52,50,56,.72); opacity: 1; font-size: 15px; }
+.chapter-one-ending__note { margin-top: 42px !important; color: rgba(52,50,56,.65); font-size: 15px !important; }
 .chapter-one-ending__question { margin-top: 42px !important; color: #7f5756; font-size: 20px !important; }
 .story-entry-button {
   display: inline-flex;
@@ -483,6 +486,7 @@ button:focus-visible, select:focus-visible, input:focus-visible, textarea:focus-
 .story-scene__meta { margin: 0 0 11px; color: #d5a49d; font-size: 9px; letter-spacing: .13em; text-transform: uppercase; }
 .story-scene__copy h3 { margin: 0; font: 400 clamp(24px, 7vw, 38px)/1.35 var(--serif); letter-spacing: .035em; }
 .story-scene__caption { max-width: 42em; margin: 20px 0 0; color: rgba(242,238,232,.68); font: 400 14px/1.95 var(--serif); letter-spacing: .03em; }
+.story-scene--text .story-scene__caption { max-width: 36em; margin-top: 30px; padding: 24px 0 4px; border-top: 1px solid rgba(255,255,255,.12); font-size: 16px; line-height: 2.05; }
 .story-scene__photo { display: block; width: 100%; padding: 0; overflow: hidden; border: 0; border-radius: 2px; background: #151d1f; box-shadow: 0 24px 60px rgba(0,0,0,.3); cursor: zoom-in; }
 .story-scene__photo img { display: block; width: 100%; max-height: 76svh; object-fit: inherit; background: #151d1f; }
 .story-scene--photo .story-scene__photo { max-width: 610px; }

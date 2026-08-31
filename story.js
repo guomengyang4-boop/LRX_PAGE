@@ -95,6 +95,7 @@ function createStoryMedia(scene, secondary = false) {
 }
 
 function createStorySpecial(scene) {
+  if (scene.type === "text") return null;
   if (scene.type === "chat") {
     const chat = document.createElement("div");
     chat.className = "story-chat";
@@ -153,7 +154,10 @@ function renderStoryScenes() {
     const caption = document.createElement("p");
     caption.className = "story-scene__caption";
     caption.textContent = scene.caption || "";
-    article.append(number, copy, createStorySpecial(scene), caption);
+    const special = createStorySpecial(scene);
+    article.append(number, copy);
+    if (special) article.append(special);
+    article.append(caption);
     fragment.append(article);
   });
   elements.storyTimeline.append(fragment);
@@ -280,8 +284,15 @@ function applyContent() {
   setText("#continuedText", ending.continued);
   renderStoryScenes();
   renderLetter();
-  renderStandaloneMedia(document.querySelector("#importantPhotoMedia"), CONTENT_DATA.importantPhoto || {}, "[重要照片]");
-  setText("#importantPhotoCaption", CONTENT_DATA.importantPhoto?.caption);
+  const importantPhoto = CONTENT_DATA.importantPhoto || {};
+  const importantPhotoFigure = document.querySelector(".important-photo");
+  if (importantPhoto.image) {
+    importantPhotoFigure.hidden = false;
+    renderStandaloneMedia(document.querySelector("#importantPhotoMedia"), importantPhoto, "[重要照片]");
+    setText("#importantPhotoCaption", importantPhoto.caption);
+  } else {
+    importantPhotoFigure.hidden = true;
+  }
   renderEndingPhoto();
   populateDateSelectors();
   observeReveals();

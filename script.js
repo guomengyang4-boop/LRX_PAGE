@@ -120,6 +120,12 @@ function renderMoments() {
     const caption = document.createElement("p");
     caption.className = "moment-card__caption";
     caption.textContent = memory.caption || "[朋友圈原文]";
+    const commentaryLabel = document.createElement("span");
+    commentaryLabel.className = "moment-card__commentary-label";
+    commentaryLabel.textContent = CONTENT_DATA.chapterOne?.commentaryLabel || "我的旁白";
+    const title = document.createElement("h3");
+    title.className = "moment-card__title";
+    title.textContent = memory.title || "";
     const footer = document.createElement("div");
     footer.className = "moment-card__footer";
     const date = document.createElement("time");
@@ -127,7 +133,9 @@ function renderMoments() {
     const location = document.createElement("span");
     location.textContent = memory.location || "";
     footer.append(date, location);
-    body.append(name, caption, createMomentMedia(memory), footer);
+    body.append(name);
+    if (memory.title) body.append(title);
+    body.append(commentaryLabel, caption, createMomentMedia(memory), footer);
     article.append(avatar, body);
     fragment.append(article);
   });
@@ -173,6 +181,7 @@ function applyContent() {
   setText("#chapterOneIntro", chapter.intro);
   setText("#chapterOneEndingPrimary", chapter.ending?.[0]);
   setText("#chapterOneEndingSecondary", chapter.ending?.[1]);
+  setText("#chapterOneClosingNote", chapter.closingNote);
   setText("#chapterOneEndingQuestion", chapter.endingQuestion);
   setText("#storyButtonText", chapter.storyButton || "继续，看看后来");
   renderMoments();
