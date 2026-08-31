@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#101518">
+  <meta name="description" content="一封由两章组成的私人礼物。">
+  <title>For Her · 写给你</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body class="is-loading">
+  <noscript><p class="noscript-message">这个页面需要启用 JavaScript，才能完成拆信与日期验证。</p></noscript>
+
+  <div class="page-loader" id="pageLoader" aria-label="页面加载中"><i></i></div>
+
+  <button class="music-control" id="musicControl" type="button" aria-label="播放背景音乐" aria-pressed="false">
+    <span aria-hidden="true" id="musicIcon">♪</span>
+  </button>
+
+  <header class="intro" id="intro" aria-labelledby="introTitle">
+    <div class="texture texture--dark" aria-hidden="true"></div>
+    <div class="intro__frames" aria-hidden="true">
+      <i></i><i></i><i></i>
+    </div>
+    <div class="intro__content">
+      <p class="intro__eyebrow" id="openingEyebrow"></p>
+      <p class="intro__folio">ARCHIVE <span>NO. 01</span></p>
+      <h1 id="introTitle"></h1>
+      <p class="intro__line" id="openingSubtitle"></p>
+      <button class="line-button intro__button" id="startButton" type="button">
+        <span id="startButtonText"></span><span aria-hidden="true">→</span>
+      </button>
+    </div>
+    <div class="intro__footer">
+      <span id="openingHint"></span><span>390 / 844</span>
+    </div>
+  </header>
+
+  <main id="mainContent">
+    <section class="chapter chapter-one" id="chapterOne" aria-labelledby="chapterOneTitle">
+      <div class="texture texture--dark texture--fixed" aria-hidden="true"></div>
+      <div class="archive-rail" aria-hidden="true"><span>01</span><i></i><span>08</span></div>
+
+      <div class="chapter-heading reveal">
+        <div class="chapter-heading__topline"><span>PRIVATE TRAVEL LOG</span><span>VOL. I</span></div>
+        <p class="chapter-kicker">CHAPTER ONE <span>01</span></p>
+        <h2 id="chapterOneTitle"></h2>
+        <p class="chapter-deck" id="chapterOneIntro"></p>
+        <div class="chapter-heading__coordinates" aria-hidden="true">N 00°00′ &nbsp; E 000°00′</div>
+        <div class="scroll-mark" aria-hidden="true"><span></span></div>
+      </div>
+
+      <div class="timeline-heading reveal" aria-hidden="true">
+        <span>SELECTED MOMENTS</span><span id="memoryCountLabel">00 FRAMES</span>
+      </div>
+      <div class="memory-timeline" id="memoryTimeline" aria-label="旅行与生活照片时间线"></div>
+
+      <div class="chapter-one-ending reveal">
+        <span class="ending-index" aria-hidden="true">END OF CHAPTER / 01</span>
+        <p id="chapterOneEndingPrimary"></p>
+        <p class="muted" id="chapterOneEndingSecondary"></p>
+        <span class="down-arrow" aria-hidden="true">↓</span>
+      </div>
+
+      <div class="envelope-section reveal" id="envelopeSection">
+        <p class="envelope-section__eyebrow">A LETTER IS WAITING</p>
+        <button class="envelope-trigger" id="envelopeTrigger" type="button" aria-label="拆开这封信" aria-expanded="false">
+          <span class="envelope" aria-hidden="true">
+            <span class="envelope__paper"><i></i><i></i><i></i></span>
+            <span class="envelope__back"></span>
+            <span class="envelope__flap"></span>
+            <span class="envelope__front"></span>
+            <span class="envelope__seal">01</span>
+          </span>
+          <span class="envelope-label" id="envelopeLabel"></span>
+        </button>
+      </div>
+    </section>
+
+    <section class="chapter chapter-two" id="chapterTwo" aria-labelledby="chapterTwoTitle" aria-hidden="true">
+      <div class="texture texture--paper" aria-hidden="true"></div>
+      <div class="letter-page">
+        <div class="paper-rule" aria-hidden="true"></div>
+        <div class="chapter-heading chapter-heading--letter reveal-letter">
+          <div class="chapter-heading__topline"><span>LETTER / PRIVATE</span><span>VOL. II</span></div>
+          <p class="chapter-kicker">CHAPTER TWO <span>02</span></p>
+          <h2 id="chapterTwoTitle"></h2>
+          <p class="chapter-deck" id="chapterTwoIntro"></p>
+          <button class="easter-egg-trigger" id="easterEggTrigger" type="button" aria-label="信件标记">✦</button>
+        </div>
+
+        <div class="letter-copy" id="letterCopy"></div>
+
+        <figure class="important-photo reveal-letter">
+          <button class="important-photo__media" id="importantPhotoMedia" type="button" aria-label="查看重要照片"></button>
+          <figcaption id="importantPhotoCaption"></figcaption>
+        </figure>
+
+        <div class="confession-intro reveal-letter">
+          <span class="confession-intro__index">ONE MORE PAGE</span>
+          <p id="confessionBefore"></p>
+          <button class="continue-button" id="continueButton" type="button" aria-expanded="false">
+            <span id="confessionButtonText"></span><span aria-hidden="true">↓</span>
+          </button>
+        </div>
+
+        <div class="confession-reveal" id="confessionReveal" aria-live="polite">
+          <p class="confession-text" id="confessionFinal"></p>
+          <div class="ending-scene">
+            <button class="next-photo" id="nextPhotoMedia" type="button" aria-label="查看下一张照片"></button>
+            <p id="endingText"></p>
+            <p class="to-be-continued" id="continuedText"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="letter-stage" id="letterStage" aria-hidden="true">
+    <div class="letter-stage__backdrop"></div>
+    <section class="date-letter" role="dialog" aria-modal="true" aria-labelledby="dateQuestionTitle">
+      <div class="date-letter__topline"><span>FOR YOU</span><span>PRIVATE · 01</span></div>
+      <div class="date-form-view" id="dateFormView">
+        <p class="date-letter__prelude" id="datePrelude"></p>
+        <h2 id="dateQuestionTitle"></h2>
+        <form id="dateForm" novalidate>
+          <fieldset>
+            <legend class="sr-only">选择第一次见面的日期</legend>
+            <div class="date-selects">
+              <label><select id="yearSelect" aria-label="年份" required></select><span>年</span></label>
+              <i aria-hidden="true">·</i>
+              <label><select id="monthSelect" aria-label="月份" required></select><span>月</span></label>
+              <i aria-hidden="true">·</i>
+              <label><select id="daySelect" aria-label="日期" required></select><span>日</span></label>
+            </div>
+            <p class="date-message" id="dateMessage" aria-live="polite"></p>
+            <button class="date-submit" type="submit">确认这一天 <span aria-hidden="true">→</span></button>
+          </fieldset>
+        </form>
+      </div>
+      <div class="date-success" id="dateSuccess" aria-live="polite">
+        <p class="date-success__value" id="dateSuccessValue"></p>
+        <span class="date-success__check" aria-hidden="true">✓</span>
+        <p id="dateCorrectText"></p>
+        <p class="muted" id="dateTransitionText"></p>
+        <button class="date-success__continue" id="enterChapterTwoButton" type="button"></button>
+      </div>
+    </section>
+  </div>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="照片查看" aria-hidden="true">
+    <button class="lightbox__close" id="lightboxClose" type="button" aria-label="关闭大图">×</button>
+    <div class="lightbox__stage" id="lightboxStage"></div>
+    <p class="lightbox__caption" id="lightboxCaption"></p>
+  </div>
+
+  <div class="easter-egg" id="easterEgg" role="status" aria-live="polite"></div>
+
+  <script src="./content.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>
