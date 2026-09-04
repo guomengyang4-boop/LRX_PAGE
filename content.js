@@ -1,12 +1,7 @@
-/*
- * ForHer 内容数据
- * --------------------------------------------------
- * 第一章的 memories 是她认识你以前的朋友圈日常。
- * 目前先保留可替换的占位内容；以后可在 editor.html 中增删照片和文案。
- */
+/* ForHer 正式发布内容 */
 window.CONTENT = {
-  "version": 2,
-  "debug": true,
+  "version": 3,
+  "debug": false,
   "enableEasterEgg": false,
   "firstMeetDate": "2026-08-20",
   "opening": {
@@ -31,7 +26,7 @@ window.CONTENT = {
   "memories": [
     {
       "id": "memory-001",
-      "image": "./moment-2026-07-25.jpg",
+      "image": "./assets/photos/moment-2026-07-25.jpg",
       "secondaryImage": "",
       "alt": "阳光照进窗边，她举着一本书的照片",
       "title": "梅子熟时栀子香",
@@ -41,11 +36,14 @@ window.CONTENT = {
       "layout": "large",
       "fit": "cover",
       "position": "center",
-      "tones": ["#d8c6b5", "#8fa7a0"]
+      "tones": [
+        "#d8c6b5",
+        "#8fa7a0"
+      ]
     },
     {
       "id": "memory-002",
-      "image": "./moment-2026-08-03.jpg",
+      "image": "./assets/photos/moment-2026-08-03.jpg",
       "secondaryImage": "",
       "alt": "电影院银幕上的电影画面",
       "title": "某年某月某个星期几",
@@ -55,11 +53,14 @@ window.CONTENT = {
       "layout": "right",
       "fit": "cover",
       "position": "center",
-      "tones": ["#ead9c8", "#c78d73"]
+      "tones": [
+        "#ead9c8",
+        "#c78d73"
+      ]
     },
     {
       "id": "memory-003",
-      "image": "./moment-travel-day-one.jpg",
+      "image": "./assets/photos/moment-travel-day-one.jpg",
       "secondaryImage": "",
       "alt": "旅行时，她站在老建筑前拍下的背影",
       "title": "烟火寻常",
@@ -70,11 +71,14 @@ window.CONTENT = {
       "fit": "cover",
       "position": "center",
       "tilt": "-1deg",
-      "tones": ["#b9d1cf", "#7c92a2"]
+      "tones": [
+        "#b9d1cf",
+        "#7c92a2"
+      ]
     },
     {
       "id": "memory-004",
-      "image": "./moment-travel-hotpot.jpg",
+      "image": "./assets/photos/moment-travel-hotpot.jpg",
       "secondaryImage": "",
       "alt": "旅行途中一桌丰盛的火锅",
       "title": "地球旋转你吃饭",
@@ -84,11 +88,14 @@ window.CONTENT = {
       "layout": "left",
       "fit": "cover",
       "position": "center",
-      "tones": ["#e5cfcd", "#a9909a"]
+      "tones": [
+        "#e5cfcd",
+        "#a9909a"
+      ]
     },
     {
       "id": "memory-005",
-      "image": "./moment-before-first-meet-sea.jpg",
+      "image": "./assets/photos/moment-before-first-meet-sea.jpg",
       "secondaryImage": "",
       "alt": "旅行结束前，她坐在海边礁石上的照片",
       "title": "海的颜色",
@@ -98,7 +105,10 @@ window.CONTENT = {
       "layout": "large",
       "fit": "contain",
       "position": "center",
-      "tones": ["#8bbad1", "#457b91"]
+      "tones": [
+        "#8bbad1",
+        "#457b91"
+      ]
     }
   ],
   "storyChapter": {
@@ -115,10 +125,22 @@ window.CONTENT = {
       "title": "一个同校标签，和一个河北 IP",
       "caption": "这是我第一次尝试主动搭讪。你说自己几乎从不回陌生私信，可偏偏第二天回了我。",
       "messages": [
-        { "side": "me", "text": "你也是河北的？" },
-        { "side": "her", "text": "你也是啊" },
-        { "side": "me", "text": "对，我在我们学校很少见到河北的😭" },
-        { "side": "her", "text": "你也是二工大的吗" }
+        {
+          "side": "me",
+          "text": "你也是河北的？"
+        },
+        {
+          "side": "her",
+          "text": "你也是啊"
+        },
+        {
+          "side": "me",
+          "text": "对，我在我们学校很少见到河北的😭"
+        },
+        {
+          "side": "her",
+          "text": "你也是二工大的吗"
+        }
       ]
     },
     {
@@ -129,12 +151,30 @@ window.CONTENT = {
       "title": "从互发视频，到第一次在微信里说话",
       "caption": "刚加上微信时，我们还客气地互称老师。很快，聊天就变成了通勤、起床和忍不住笑的日常。",
       "messages": [
-        { "side": "me", "text": "李老师您好，久仰大名🤔" },
-        { "side": "her", "text": "郭老师过奖了😊" },
-        { "side": "me", "text": "你家教通勤多久诶" },
-        { "side": "her", "text": "这个小孩在闵行，要一个小时呢" },
-        { "side": "me", "text": "这么早，我七点还没醒" },
-        { "side": "her", "text": "做得好，下次开始" }
+        {
+          "side": "me",
+          "text": "李老师您好，久仰大名🤔"
+        },
+        {
+          "side": "her",
+          "text": "郭老师过奖了😊"
+        },
+        {
+          "side": "me",
+          "text": "你家教通勤多久诶"
+        },
+        {
+          "side": "her",
+          "text": "这个小孩在闵行，要一个小时呢"
+        },
+        {
+          "side": "me",
+          "text": "这么早，我七点还没醒"
+        },
+        {
+          "side": "her",
+          "text": "做得好，下次开始"
+        }
       ]
     },
     {
@@ -148,7 +188,7 @@ window.CONTENT = {
     {
       "id": "story-004",
       "type": "photo",
-      "image": "./fuzhou-gifts.jpg",
+      "image": "./assets/photos/fuzhou-gifts.jpg",
       "alt": "她从福州带回来的冰箱贴和挂件",
       "date": "第一次见面以前",
       "location": "福州 → 上海",
@@ -176,7 +216,7 @@ window.CONTENT = {
     {
       "id": "story-007",
       "type": "photo",
-      "image": "./first-date-dinner-movie-redacted.png",
+      "image": "./assets/photos/first-date-dinner-movie-redacted.png",
       "alt": "第一次一起吃饭和看电影的记录",
       "date": "2026.08.20",
       "location": "第三家餐厅 · 电影院",
@@ -188,7 +228,7 @@ window.CONTENT = {
     {
       "id": "story-008",
       "type": "photo",
-      "image": "./after-work-cake.jpg",
+      "image": "./assets/photos/after-work-cake.jpg",
       "alt": "她下班带回来的蛋糕",
       "date": "某个下班以后",
       "location": "回学校的路上",
@@ -200,8 +240,8 @@ window.CONTENT = {
     {
       "id": "story-009",
       "type": "gallery",
-      "image": "./daybyday-view.jpg",
-      "secondaryImage": "./daybyday-food.jpg",
+      "image": "./assets/photos/daybyday-view.jpg",
+      "secondaryImage": "./assets/photos/daybyday-food.jpg",
       "alt": "Day by Day 的窗景和漂亮饭",
       "date": "2026.08.29",
       "location": "Day by Day · 上海",
@@ -213,8 +253,8 @@ window.CONTENT = {
     {
       "id": "story-010",
       "type": "gallery",
-      "image": "./city-night.jpg",
-      "secondaryImage": "./character-collage.jpg",
+      "image": "./assets/photos/city-night.jpg",
+      "secondaryImage": "./assets/photos/character-collage.jpg",
       "alt": "上周一起出去时拍下的夜景和卡通人物",
       "date": "2026.08.29",
       "location": "上海 · 一起走过的地方",
@@ -226,7 +266,7 @@ window.CONTENT = {
     {
       "id": "story-011",
       "type": "photo",
-      "image": "./her-portrait.jpg",
+      "image": "./assets/photos/her-portrait.jpg",
       "alt": "她和卡通人物一起拍下的照片",
       "date": "现在",
       "location": "我眼里的你",
@@ -249,11 +289,26 @@ window.CONTENT = {
     "intro": "有些话当面没能说完整，我想把它们安静地写在这里。"
   },
   "letterParagraphs": [
-    { "id": "letter-001", "text": "你总说自己是淡淡的人，喜欢出去走走，生活里有很多新鲜的地方。而我的生活相对简单，学校、工作和住处，常常只是三点一线。所以你会担心：是不是因为我的生活太单调，突然出现了你，我才一时上头。这个担心，我能理解。" },
-    { "id": "letter-002", "text": "但我不希望你负责让我的生活变得热闹，也不是因为你和我的日常不同，就把你当成一阵短暂的新鲜感。真正让我在意的，是聊天时的有趣，是你洒脱又细腻的性格，是你带回来的小礼物，是一起下班、一起回学校时那些并不轰烈的普通时刻。" },
-    { "id": "letter-003", "text": "认识的时间还短，这是真的。我的认真也是真的。因为时间短，我不想靠一句“我不会变”让你立刻相信；我更愿意继续了解你，也让你慢慢看清楚我。" },
-    { "id": "letter-004", "text": "我是一个敏感、谨慎，也很保守的人。过去的经历让我有时会害怕失去，也可能因为在意而显得笨拙。但我会学着把在意变得稳定、清楚，而不是让它成为你的负担。" },
-    { "id": "letter-005", "text": "我做这个网页，是因为我想认真保存我们已经发生过的事，也想让你知道：你说过的话、给过的善意和我们一起度过的时间，我都有好好接住。" }
+    {
+      "id": "letter-001",
+      "text": "你总说自己是淡淡的人，喜欢出去走走，生活里有很多新鲜的地方。而我的生活相对简单，学校、工作和住处，常常只是三点一线。所以你会担心：是不是因为我的生活太单调，突然出现了你，我才一时上头。这个担心，我能理解。"
+    },
+    {
+      "id": "letter-002",
+      "text": "但我不希望你负责让我的生活变得热闹，也不是因为你和我的日常不同，就把你当成一阵短暂的新鲜感。真正让我在意的，是聊天时的有趣，是你洒脱又细腻的性格，是你带回来的小礼物，是一起下班、一起回学校时那些并不轰烈的普通时刻。"
+    },
+    {
+      "id": "letter-003",
+      "text": "认识的时间还短，这是真的。我的认真也是真的。因为时间短，我不想靠一句“我不会变”让你立刻相信；我更愿意继续了解你，也让你慢慢看清楚我。"
+    },
+    {
+      "id": "letter-004",
+      "text": "我是一个敏感、谨慎，也很保守的人。过去的经历让我有时会害怕失去，也可能因为在意而显得笨拙。但我会学着把在意变得稳定、清楚，而不是让它成为你的负担。"
+    },
+    {
+      "id": "letter-005",
+      "text": "我做这个网页，是因为我想认真保存我们已经发生过的事，也想让你知道：你说过的话、给过的善意和我们一起度过的时间，我都有好好接住。"
+    }
   ],
   "importantPhoto": {
     "image": "",
@@ -274,6 +329,18 @@ window.CONTENT = {
     "photoLabel": "这张照片，我们还没有拍。",
     "text": "如果以后还能继续聊天、一起下班、去吃没有吃过的饭，我会很开心。\n剩下的，就让之后的每一天自然发生。",
     "continued": "下一幕，想和你一起慢慢留下。"
+  },
+  "birthdayEdition": {
+    "enabled": false,
+    "gateVisible": true,
+    "locked": true,
+    "gate": {
+      "eyebrow": "A NEW PAGE · BIRTHDAY EDITION",
+      "title": "这里，预留给下一段故事",
+      "description": "生日限定内容正在准备中。正式启用前，这个入口不会出现在发布版本里。",
+      "switchLabel": "开启生日限定",
+      "button": "进入生日限定信封"
+    }
   },
   "music": {
     "chapterOne": "./assets/music/chapter1.mp3",

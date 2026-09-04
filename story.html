@@ -70,6 +70,69 @@
             <p class="to-be-continued" id="continuedText"></p>
           </div>
         </div>
+
+        <section class="birthday-gate" id="birthdayGate" aria-labelledby="birthdayGateTitle" hidden>
+          <div class="birthday-gate__copy">
+            <p class="birthday-kicker" id="birthdayGateEyebrow"></p>
+            <h2 id="birthdayGateTitle"></h2>
+            <p id="birthdayGateDescription"></p>
+          </div>
+          <label class="birthday-switch">
+            <input id="birthdayEditionSwitch" type="checkbox" role="switch" aria-controls="birthdayEdition">
+            <span class="birthday-switch__track" aria-hidden="true"><i></i></span>
+            <span id="birthdaySwitchLabel"></span>
+          </label>
+          <button class="birthday-enter" id="enterBirthdayButton" type="button" disabled>
+            <span id="birthdayEnterLabel"></span><span aria-hidden="true">→</span>
+          </button>
+        </section>
+
+        <section class="birthday-edition" id="birthdayEdition" aria-labelledby="birthdayEditionTitle" aria-hidden="true" hidden>
+          <header class="birthday-edition__cover">
+            <p class="birthday-kicker" id="birthdayCoverEyebrow"></p>
+            <span class="birthday-edition__stamp" aria-hidden="true">BIRTHDAY<br>EDITION</span>
+            <h2 id="birthdayEditionTitle"></h2>
+            <p id="birthdayCoverIntro"></p>
+            <button class="birthday-open" id="openBirthdayStoryButton" type="button" aria-expanded="false">
+              <span id="birthdayOpenLabel"></span><span aria-hidden="true">↓</span>
+            </button>
+          </header>
+
+          <div class="birthday-story" id="birthdayStory" aria-hidden="true">
+            <div class="birthday-story__heading">
+              <p class="birthday-kicker" id="birthdayProcessEyebrow"></p>
+              <h2 id="birthdayProcessTitle"></h2>
+              <p id="birthdayProcessIntro"></p>
+            </div>
+            <div class="birthday-process" id="birthdayProcess"></div>
+
+            <div class="birthday-letter-entry">
+              <p class="birthday-kicker" id="birthdayLetterEntryEyebrow"></p>
+              <button class="birthday-envelope-trigger" id="birthdayLetterTrigger" type="button" aria-expanded="false">
+                <span class="birthday-envelope" aria-hidden="true">
+                  <span class="birthday-envelope__paper"></span>
+                  <span class="birthday-envelope__back"></span>
+                  <span class="birthday-envelope__flap"></span>
+                  <span class="birthday-envelope__front"></span>
+                  <span class="birthday-envelope__seal">✦</span>
+                </span>
+                <span id="birthdayLetterEntryLabel"></span>
+              </button>
+            </div>
+
+            <article class="birthday-letter" id="birthdayLetter" aria-labelledby="birthdayLetterTitle" aria-hidden="true" hidden>
+              <div class="birthday-letter__topline"><span id="birthdayLetterEyebrow"></span><span id="birthdayLetterDate"></span></div>
+              <h2 id="birthdayLetterTitle"></h2>
+              <p class="birthday-letter__intro" id="birthdayLetterIntro"></p>
+              <div class="birthday-letter__copy" id="birthdayLetterCopy"></div>
+              <div class="birthday-dialogue">
+                <p id="birthdayDialoguePrompt"></p>
+                <div class="birthday-dialogue__options" id="birthdayDialogueOptions"></div>
+                <p class="birthday-dialogue__response" id="birthdayDialogueResponse" aria-live="polite"></p>
+              </div>
+            </article>
+          </div>
+        </section>
       </div>
     </section>
   </main>
