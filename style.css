@@ -224,32 +224,6 @@ button:focus-visible, select:focus-visible, input:focus-visible, textarea:focus-
 .envelope-trigger.is-open .envelope__paper { height: 156px; transform: translateY(-70px); }
 .envelope-trigger.is-open .envelope__seal { opacity: 0; }
 
-.letter-stage { position: fixed; z-index: 60; inset: 0; display: grid; place-items: center; padding: 18px; visibility: hidden; pointer-events: none; }
-.letter-stage__backdrop { position: absolute; inset: 0; opacity: 0; background: rgba(8, 11, 12, .87); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); transition: opacity .9s var(--ease); }
-.date-letter { position: relative; width: min(100%, 480px); min-height: min(650px, calc(100svh - 36px)); max-height: calc(100svh - 36px); overflow: auto; padding: 24px clamp(22px, 7vw, 48px) 38px; color: var(--text-ink); background: var(--bg-paper); box-shadow: 0 32px 95px rgba(0, 0, 0, .48); opacity: 0; transform: translateY(28vh) scale(.78); transform-origin: center 80%; transition: opacity .9s var(--ease), transform 1.15s var(--ease); }
-.date-letter::after { content: ""; position: absolute; inset: 12px; border: 1px solid rgba(27,29,29,.07); pointer-events: none; }
-.letter-stage.is-open { visibility: visible; pointer-events: auto; }
-.letter-stage.is-open .letter-stage__backdrop { opacity: 1; }
-.letter-stage.is-open .date-letter { opacity: 1; transform: none; }
-.date-letter__topline { position: relative; z-index: 1; display: flex; justify-content: space-between; padding-bottom: 15px; border-bottom: 1px solid var(--line-light); color: rgba(27, 29, 29, .46); font-size: 8px; letter-spacing: .2em; }
-.date-form-view { position: relative; z-index: 1; padding-top: clamp(60px, 11vh, 98px); transition: opacity .6s, transform .6s; }
-.date-letter__prelude { white-space: pre-line; margin: 0 0 27px; color: var(--text-ink-muted); font: 400 14px/1.9 var(--serif); letter-spacing: .05em; }
-.date-letter h2 { margin: 0 0 50px; font: 400 clamp(24px, 7vw, 32px)/1.6 var(--serif); letter-spacing: .04em; }
-.date-letter fieldset { padding: 0; border: 0; }
-.date-selects { display: grid; grid-template-columns: minmax(72px, 1.4fr) auto minmax(56px, 1fr) auto minmax(56px, 1fr); gap: 6px; align-items: start; }
-.date-selects label { display: grid; text-align: center; }
-.date-selects select { width: 100%; min-height: 48px; padding: 0 4px 6px; color: var(--text-ink); border: 0; border-bottom: 1px solid rgba(27, 29, 29, .28); border-radius: 0; background: transparent; text-align: center; font: 400 clamp(19px, 5vw, 25px)/1 var(--serif); appearance: none; -webkit-appearance: none; }
-.date-selects label span { margin-top: 9px; color: rgba(27, 29, 29, .42); font-size: 9px; letter-spacing: .18em; }
-.date-selects > i { padding-top: 13px; color: rgba(27, 29, 29, .28); font-style: normal; }
-.date-message { min-height: 47px; margin: 24px 0 0; color: #756a58; font: 400 12px/1.7 var(--serif); letter-spacing: .04em; }
-.date-submit, .date-success__continue { display: flex; justify-content: space-between; align-items: center; width: 100%; min-height: 50px; padding: 0 0 10px; color: var(--text-ink); border: 0; border-bottom: 1px solid rgba(27, 29, 29, .45); background: transparent; cursor: pointer; font-size: 12px; letter-spacing: .14em; }
-.date-success { position: absolute; z-index: 2; inset: 52px 26px 26px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; opacity: 0; pointer-events: none; transform: translateY(16px); transition: opacity .7s, transform .7s; }
-.date-success__value { margin: 0 0 28px; font: 400 clamp(22px, 7vw, 34px)/1 var(--serif); letter-spacing: .12em; }
-.date-success__check { display: grid; place-items: center; width: 42px; height: 42px; margin-bottom: 31px; border: 1px solid rgba(27, 29, 29, .36); border-radius: 50%; }
-.date-success p:not(.date-success__value) { margin: 7px 0; font: 400 15px/1.7 var(--serif); letter-spacing: .06em; }
-.date-success__continue { justify-content: center; width: min(100%, 230px); margin-top: 34px; padding: 0 0 9px; }
-.date-letter.is-success .date-form-view { opacity: 0; transform: translateY(-14px); pointer-events: none; }
-.date-letter.is-success .date-success { opacity: 1; transform: none; pointer-events: auto; }
 
 .chapter-two { max-height: 0; overflow: hidden; color: var(--text-ink); background: var(--bg-paper); opacity: 1; pointer-events: none; transition: max-height 0s 1.2s; }
 .letter-page { position: relative; z-index: 1; width: min(100%, 760px); margin: 0 auto; padding: 0 var(--page-pad) max(100px, 12vh); }
@@ -376,18 +350,11 @@ button:focus-visible, select:focus-visible, input:focus-visible, textarea:focus-
 .birthday-letter__intro { margin-left: 0; }
 .birthday-letter__copy { margin: 12vh 0; }
 .birthday-letter__copy p { margin: 0 0 clamp(52px, 10vh, 90px); font: 400 clamp(16px, 4.5vw, 19px)/2.05 var(--serif); letter-spacing: .05em; white-space: pre-line; }
-.birthday-dialogue { padding-top: 9vh; border-top: 1px solid var(--line-light); text-align: center; }
-.birthday-dialogue > p:first-child { margin: 0 0 34px; font: 400 clamp(18px, 5vw, 24px)/1.7 var(--serif); }
-.birthday-dialogue__options { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
-.birthday-dialogue__options button { min-height: 42px; padding: 0 16px; color: var(--text-ink); border: 1px solid rgba(27,29,29,.24); border-radius: 999px; background: transparent; cursor: pointer; font-size: 11px; letter-spacing: .08em; transition: background .25s, border-color .25s; }
-.birthday-dialogue__options button:hover, .birthday-dialogue__options button:focus-visible { border-color: rgba(27,29,29,.45); background: rgba(27,29,29,.06); }
-.birthday-dialogue__options button.is-selected { color: var(--bg-paper); border-color: var(--text-ink); background: var(--text-ink); }
-.birthday-dialogue__response { min-height: 4em; margin: 32px 0 0; color: var(--text-ink-muted); font: 400 14px/1.9 var(--serif); white-space: pre-line; }
+.birthday-letter__copy .birthday-letter__signature { margin-top: 13vh; margin-bottom: 0; color: rgba(27,29,29,.72); font-size: 14px; text-align: right; letter-spacing: .14em; }
 
 .chapter-two-active { color-scheme: light; color: var(--text-ink); background: var(--bg-paper); }
 .chapter-two-active .chapter-one { opacity: .1; filter: blur(4px); }
 .chapter-two-active .chapter-two { max-height: 30000px; opacity: 1; pointer-events: auto; transition: max-height 0s; }
-.chapter-two-active .letter-stage { opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .8s, visibility .8s; }
 
 .lightbox { position: fixed; z-index: 100; inset: 0; display: grid; grid-template-rows: 1fr auto; place-items: center; padding: max(60px, env(safe-area-inset-top)) 18px max(24px, env(safe-area-inset-bottom)); color: var(--text-primary); background: rgba(8, 11, 13, .96); opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .35s, visibility .35s; }
 .lightbox.is-open { opacity: 1; visibility: visible; pointer-events: auto; }
@@ -436,7 +403,6 @@ button:focus-visible, select:focus-visible, input:focus-visible, textarea:focus-
   .memory--left, .memory--right { grid-template-columns: 1.08fr .92fr; gap: 13px; }
   .memory--right { grid-template-columns: .92fr 1.08fr; }
   .memory__meta { gap: 6px; font-size: 8px; }
-  .date-letter { padding-right: 18px; padding-left: 18px; }
 }
 
 @media (max-width: 520px) {

@@ -6,15 +6,6 @@ const elements = {
   loader: document.querySelector("#pageLoader"),
   storyTimeline: document.querySelector("#storyTimeline"),
   envelopeTrigger: document.querySelector("#envelopeTrigger"),
-  letterStage: document.querySelector("#letterStage"),
-  dateLetter: document.querySelector(".date-letter"),
-  dateForm: document.querySelector("#dateForm"),
-  dateMessage: document.querySelector("#dateMessage"),
-  dateSuccessValue: document.querySelector("#dateSuccessValue"),
-  yearSelect: document.querySelector("#yearSelect"),
-  monthSelect: document.querySelector("#monthSelect"),
-  daySelect: document.querySelector("#daySelect"),
-  enterChapterTwoButton: document.querySelector("#enterChapterTwoButton"),
   chapterTwo: document.querySelector("#chapterTwo"),
   continueButton: document.querySelector("#continueButton"),
   confessionReveal: document.querySelector("#confessionReveal"),
@@ -28,8 +19,6 @@ const elements = {
   birthdayLetterTrigger: document.querySelector("#birthdayLetterTrigger"),
   birthdayLetter: document.querySelector("#birthdayLetter"),
   birthdayLetterCopy: document.querySelector("#birthdayLetterCopy"),
-  birthdayDialogueOptions: document.querySelector("#birthdayDialogueOptions"),
-  birthdayDialogueResponse: document.querySelector("#birthdayDialogueResponse"),
   lightbox: document.querySelector("#lightbox"),
   lightboxStage: document.querySelector("#lightboxStage"),
   lightboxCaption: document.querySelector("#lightboxCaption"),
@@ -211,25 +200,6 @@ function renderEndingPhoto() {
   button.addEventListener("click", () => openLightbox({ image: data.image, alt: data.alt, caption: data.text }));
 }
 
-function populateDateSelectors() {
-  const configuredYear = Number(String(CONTENT_DATA.firstMeetDate).split("-")[0]);
-  const currentYear = new Date().getFullYear();
-  for (let year = Math.min(configuredYear - 3, currentYear - 5); year <= Math.max(configuredYear + 3, currentYear + 2); year += 1) elements.yearSelect.add(new Option(String(year), String(year)));
-  for (let month = 1; month <= 12; month += 1) { const value = String(month).padStart(2, "0"); elements.monthSelect.add(new Option(value, value)); }
-  elements.yearSelect.value = String(currentYear);
-  elements.monthSelect.value = "01";
-  updateDayOptions();
-  elements.daySelect.value = "01";
-}
-
-function updateDayOptions() {
-  const oldDay = elements.daySelect.value || "01";
-  const days = new Date(Number(elements.yearSelect.value), Number(elements.monthSelect.value), 0).getDate();
-  elements.daySelect.replaceChildren();
-  for (let day = 1; day <= days; day += 1) { const value = String(day).padStart(2, "0"); elements.daySelect.add(new Option(value, value)); }
-  elements.daySelect.value = Number(oldDay) <= days ? oldDay : String(days).padStart(2, "0");
-}
-
 function observeReveals() {
   const items = document.querySelectorAll(".reveal, .reveal-letter");
   if (!("IntersectionObserver" in window) || REDUCED_MOTION.matches) { items.forEach(item => item.classList.add("is-visible")); return; }
@@ -242,20 +212,11 @@ function openLetter() {
   state.letterOpened = true;
   elements.envelopeTrigger.classList.add("is-open");
   elements.envelopeTrigger.setAttribute("aria-expanded", "true");
-  elements.letterStage.setAttribute("aria-hidden", "false");
-  window.setTimeout(() => { elements.letterStage.classList.add("is-open"); elements.yearSelect.focus({ preventScroll: true }); }, REDUCED_MOTION.matches ? 0 : 380);
-}
-
-function validateDate(event) {
-  event.preventDefault();
-  const value = `${elements.yearSelect.value}-${elements.monthSelect.value}-${elements.daySelect.value}`;
-  if (value !== CONTENT_DATA.firstMeetDate) { elements.dateMessage.textContent = CONTENT_DATA.dateQuestion?.wrong || "好像不是这一天。再想想？"; return; }
-  elements.dateMessage.textContent = "";
-  elements.dateLetter.classList.add("is-success");
-  elements.dateSuccessValue.textContent = value.split("-").join(" · ");
+  window.setTimeout(enterLetter, REDUCED_MOTION.matches ? 0 : 520);
 }
 
 function enterLetter() {
+  if (state.inLetter) return;
   state.inLetter = true;
   elements.body.classList.add("chapter-two-active");
   elements.chapterTwo.setAttribute("aria-hidden", "false");
@@ -362,7 +323,6 @@ function renderBirthdayEdition() {
   const cover = edition.cover || {};
   const processChapter = edition.processChapter || {};
   const finalLetter = edition.finalLetter || {};
-  const dialogue = edition.dialogue || {};
 
   setText("#birthdayGateEyebrow", gate.eyebrow);
   setText("#birthdayGateTitle", gate.title);
@@ -382,7 +342,6 @@ function renderBirthdayEdition() {
   setText("#birthdayLetterDate", finalLetter.date);
   setText("#birthdayLetterTitle", finalLetter.title);
   setText("#birthdayLetterIntro", finalLetter.intro);
-  setText("#birthdayDialoguePrompt", dialogue.prompt);
 
   const locked = !birthdayEditionUnlocked();
   elements.birthdayGate.classList.toggle("is-locked", locked);
@@ -398,20 +357,10 @@ function renderBirthdayEdition() {
   (finalLetter.paragraphs || []).forEach(paragraph => {
     const text = document.createElement("p");
     text.textContent = typeof paragraph === "string" ? paragraph : paragraph.text;
+    if (typeof paragraph === "object" && paragraph.style === "signature") text.className = "birthday-letter__signature";
     elements.birthdayLetterCopy.append(text);
   });
 
-  elements.birthdayDialogueOptions.replaceChildren();
-  (dialogue.options || []).forEach(option => {
-    const button = document.createElement("button");
-    button.type = "button";
-    button.textContent = option.label || "[回答]";
-    button.addEventListener("click", () => {
-      elements.birthdayDialogueOptions.querySelectorAll("button").forEach(item => item.classList.toggle("is-selected", item === button));
-      elements.birthdayDialogueResponse.textContent = option.response || "";
-    });
-    elements.birthdayDialogueOptions.append(button);
-  });
 }
 
 function toggleBirthdayEdition() {
@@ -455,18 +404,12 @@ function openBirthdayLetter() {
 
 function applyContent() {
   const story = CONTENT_DATA.storyChapter || {};
-  const date = CONTENT_DATA.dateQuestion || {};
   const letter = CONTENT_DATA.chapterTwo || {};
   const confession = CONTENT_DATA.confession || {};
   const ending = CONTENT_DATA.ending || {};
   setText("#storyEyebrow", story.eyebrow);
   setText("#storyChapterTitle", story.title);
   setText("#storyChapterIntro", story.intro);
-  setText("#datePrelude", date.prelude);
-  setText("#dateQuestionTitle", date.title);
-  setText("#dateCorrectText", date.correct);
-  setText("#dateTransitionText", date.transition);
-  setText("#enterChapterTwoButton", date.continueLabel || "打开这封信");
   setText("#chapterTwoTitle", letter.title);
   setText("#chapterTwoIntro", letter.intro);
   setText("#confessionBefore", confession.before);
@@ -487,17 +430,12 @@ function applyContent() {
   }
   renderEndingPhoto();
   renderBirthdayEdition();
-  populateDateSelectors();
   observeReveals();
   if (CONTENT_DATA.debug) elements.debugPanel?.classList.add("is-enabled");
   requestAnimationFrame(() => { elements.body.classList.remove("is-loading"); elements.body.classList.add("is-ready"); elements.loader?.setAttribute("aria-hidden", "true"); });
 }
 
 elements.envelopeTrigger.addEventListener("click", openLetter);
-elements.dateForm.addEventListener("submit", validateDate);
-elements.yearSelect.addEventListener("change", updateDayOptions);
-elements.monthSelect.addEventListener("change", updateDayOptions);
-elements.enterChapterTwoButton.addEventListener("click", enterLetter);
 elements.continueButton.addEventListener("click", revealConfession);
 elements.birthdayEditionSwitch.addEventListener("change", toggleBirthdayEdition);
 elements.enterBirthdayButton.addEventListener("click", enterBirthdayEdition);

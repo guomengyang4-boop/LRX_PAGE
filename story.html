@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="./style.css">
 </head>
 <body class="is-loading is-started story-page">
-  <noscript><p class="noscript-message">这个页面需要启用 JavaScript，才能完成拆信与日期验证。</p></noscript>
+  <noscript><p class="noscript-message">这个页面需要启用 JavaScript，才能完成拆信与章节转场。</p></noscript>
   <div class="page-loader" id="pageLoader" aria-label="页面加载中"><i></i></div>
 
   <a class="story-back-link" href="./index.html" aria-label="返回第一章">← 第一章</a>
@@ -125,47 +125,12 @@
               <h2 id="birthdayLetterTitle"></h2>
               <p class="birthday-letter__intro" id="birthdayLetterIntro"></p>
               <div class="birthday-letter__copy" id="birthdayLetterCopy"></div>
-              <div class="birthday-dialogue">
-                <p id="birthdayDialoguePrompt"></p>
-                <div class="birthday-dialogue__options" id="birthdayDialogueOptions"></div>
-                <p class="birthday-dialogue__response" id="birthdayDialogueResponse" aria-live="polite"></p>
-              </div>
             </article>
           </div>
         </section>
       </div>
     </section>
   </main>
-
-  <div class="letter-stage" id="letterStage" aria-hidden="true">
-    <div class="letter-stage__backdrop"></div>
-    <section class="date-letter" role="dialog" aria-modal="true" aria-labelledby="dateQuestionTitle">
-      <div class="date-letter__topline"><span>PRIVATE SCREENING</span><span>AFTER CREDITS · 01</span></div>
-      <div class="date-form-view" id="dateFormView">
-        <p class="date-letter__prelude" id="datePrelude"></p>
-        <h2 id="dateQuestionTitle"></h2>
-        <form id="dateForm" novalidate>
-          <fieldset>
-            <legend class="sr-only">选择第一次见面的日期</legend>
-            <div class="date-selects">
-              <label><select id="yearSelect" aria-label="年份" required></select><span>年</span></label><i aria-hidden="true">·</i>
-              <label><select id="monthSelect" aria-label="月份" required></select><span>月</span></label><i aria-hidden="true">·</i>
-              <label><select id="daySelect" aria-label="日期" required></select><span>日</span></label>
-            </div>
-            <p class="date-message" id="dateMessage" aria-live="polite"></p>
-            <button class="date-submit" type="submit">确认这一天 <span aria-hidden="true">→</span></button>
-          </fieldset>
-        </form>
-      </div>
-      <div class="date-success" id="dateSuccess" aria-live="polite">
-        <p class="date-success__value" id="dateSuccessValue"></p>
-        <span class="date-success__check" aria-hidden="true">✓</span>
-        <p id="dateCorrectText"></p>
-        <p class="muted" id="dateTransitionText"></p>
-        <button class="date-success__continue" id="enterChapterTwoButton" type="button"></button>
-      </div>
-    </section>
-  </div>
 
   <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="照片查看" aria-hidden="true">
     <button class="lightbox__close" id="lightboxClose" type="button" aria-label="关闭大图">×</button>
