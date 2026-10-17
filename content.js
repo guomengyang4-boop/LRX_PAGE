@@ -485,7 +485,8 @@ window.CONTENT = {
         {
           "text": "来自真心的Gmy",
           "style": "signature"
-        }
+        },
+        "lrx我喜欢你"
       ]
     }
   },
